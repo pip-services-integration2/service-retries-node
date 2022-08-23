@@ -1,0 +1,10 @@
+/node_modules
+/npm-debug.log
+/.idea
+/data/retries.test.json
+/data/retries.json
+/obj/test
+/docker/id_rsa*
+/docker/.npmrc
+/.vscode
+/package-lock.json

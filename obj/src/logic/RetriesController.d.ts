@@ -1,0 +1,35 @@
+import { ConfigParams } from 'pip-services3-commons-nodex';
+import { IConfigurable } from 'pip-services3-commons-nodex';
+import { IReferences } from 'pip-services3-commons-nodex';
+import { IReferenceable } from 'pip-services3-commons-nodex';
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
+import { DataPage } from 'pip-services3-commons-nodex';
+import { ICommandable } from 'pip-services3-commons-nodex';
+import { CommandSet } from 'pip-services3-commons-nodex';
+import { InstrumentTiming } from 'pip-services3-rpc-nodex';
+import { RetryV1 } from '../data/version1';
+import { IRetriesController } from './IRetriesController';
+export declare class RetriesController implements IConfigurable, IReferenceable, ICommandable, IRetriesController {
+    private static _defaultConfig;
+    readonly component: string;
+    private _logger;
+    private _counters;
+    private _tracer;
+    private _dependencyResolver;
+    private _persistence;
+    private _commandSet;
+    configure(config: ConfigParams): void;
+    setReferences(references: IReferences): void;
+    getCommandSet(): CommandSet;
+    protected instrument(correlationId: string, methodName: string): InstrumentTiming;
+    getGroupNames(correlationId: string): Promise<string[]>;
+    private createRetries;
+    addRetries(correlationId: string, group: string, ids: string[], timeToLive: number): Promise<RetryV1[]>;
+    addRetry(correlationId: string, group: string, id: string, timeToLive: number): Promise<RetryV1>;
+    getRetries(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<RetryV1>>;
+    getRetryById(correlationId: string, group: string, id: string): Promise<RetryV1>;
+    getRetryByIds(correlationId: string, group: string, ids: string[]): Promise<RetryV1[]>;
+    deleteRetry(correlationId: string, group: string, id: string): Promise<void>;
+    deleteExpiredRetries(correlationId: string): Promise<void>;
+}
