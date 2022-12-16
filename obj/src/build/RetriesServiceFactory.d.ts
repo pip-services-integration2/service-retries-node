@@ -6,7 +6,7 @@ export declare class RetriesServiceFactory extends Factory {
     static FilePersistenceDescriptor: Descriptor;
     static MongoDbPersistenceDescriptor: Descriptor;
     static ControllerDescriptor: Descriptor;
-    static HttpServiceDescriptor: Descriptor;
+    static CmdHttpServiceDescriptor: Descriptor;
     static ProcessorDescriptor: Descriptor;
     constructor();
 }

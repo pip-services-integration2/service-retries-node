@@ -16,7 +16,7 @@ class RetriesServiceFactory extends pip_services3_components_nodex_1.Factory {
         this.registerAsType(RetriesServiceFactory.FilePersistenceDescriptor, persistence_2.RetriesFilePersistence);
         this.registerAsType(RetriesServiceFactory.MongoDbPersistenceDescriptor, persistence_1.RetriesMongoDbPersistence);
         this.registerAsType(RetriesServiceFactory.ControllerDescriptor, logic_1.RetriesController);
-        this.registerAsType(RetriesServiceFactory.HttpServiceDescriptor, version1_1.RetriesHttpServiceV1);
+        this.registerAsType(RetriesServiceFactory.CmdHttpServiceDescriptor, version1_1.RetriesCommandableHttpServiceV1);
         this.registerAsType(RetriesServiceFactory.ProcessorDescriptor, RetriesProcessor_1.RetryProcessor);
     }
 }
@@ -26,6 +26,6 @@ RetriesServiceFactory.MemoryPersistenceDescriptor = new pip_services3_commons_no
 RetriesServiceFactory.FilePersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "persistence", "file", "*", "1.0");
 RetriesServiceFactory.MongoDbPersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "persistence", "mongodb", "*", "1.0");
 RetriesServiceFactory.ControllerDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "controller", "default", "*", "1.0");
-RetriesServiceFactory.HttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "service", "http", "*", "1.0");
+RetriesServiceFactory.CmdHttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "service", "commandable-http", "*", "1.0");
 RetriesServiceFactory.ProcessorDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-retries", "processor", "default", "*", "1.0");
 //# sourceMappingURL=RetriesServiceFactory.js.map

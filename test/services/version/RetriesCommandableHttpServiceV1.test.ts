@@ -8,7 +8,7 @@ import { References } from 'pip-services3-commons-nodex';
 import { RetryV1 } from '../../../src/data/version1';
 import { RetriesMemoryPersistence } from '../../../src/persistence';
 import { RetriesController } from '../../../src/logic';
-import { RetriesHttpServiceV1 } from '../../../src/services/version1';
+import { RetriesCommandableHttpServiceV1 } from '../../../src/services/version1';
 
 import {TestModel} from "../../data";
 
@@ -20,15 +20,15 @@ let httpConfig = ConfigParams.fromTuples(
 
 
 
-suite('RetriesHttpServiceV1', ()=> {    
-    let service: RetriesHttpServiceV1;
+suite('RetriesCommandableHttpServiceV1', ()=> {    
+    let service: RetriesCommandableHttpServiceV1;
     let rest: any;
 
     suiteSetup(async () => {
         let persistence = new RetriesMemoryPersistence();
         let controller = new RetriesController();
 
-        service = new RetriesHttpServiceV1();
+        service = new RetriesCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(

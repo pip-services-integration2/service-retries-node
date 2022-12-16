@@ -1,1 +1,1 @@
-export { RetriesHttpServiceV1 } from './RetriesHttpServiceV1';
+export { RetriesCommandableHttpServiceV1 } from './RetriesCommandableHttpServiceV1';
